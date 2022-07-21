@@ -1,0 +1,213 @@
+ /* WILDCARD */
+ *{
+  font-family: 'Roboto', sans-serif;
+  box-sizing:border-box;   
+}
+
+/* page 1 la palettte du gout */
+ul,
+a {
+list-style: none;
+text-decoration: none;
+}
+/* header */
+#logo {
+font-family: 'Shrikhand', cursive;
+border: 0px;
+margin-left: 60px;
+width: 60%; 
+}
+
+body > header:nth-child(1) {
+  display: flex;
+  align-items: flex-start;
+}
+  
+body > header > a > i {
+margin: 25px 0 16px 10px;
+color:#000;
+}
+ 
+/* article header */ 
+article  {
+  background-color: #f2f2f2;
+  margin-bottom: 0;
+  padding-bottom: 40px;
+}
+article figure {
+  margin:0;
+  width: 100%;   
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+}
+
+article header div {
+display: flex;
+align-items: baseline;
+padding-left: 0;
+border-radius: 30px 30px 0 0;
+top:40%;
+background-color: #f2f2f2;
+position: absolute;
+width: 100%; 
+} 
+
+h1 {
+padding: 0 20px 0 20px;
+}
+
+[class="fa-regular fa-heart"]:hover,
+[class="fa-regular fa-heart"]:focus,
+[class="fa-regular fa-heart"]:active {
+font-weight: bold;
+color: #9356DC;
+transition: color 2s ease-out; 
+}
+
+[class="fa-regular fa-heart"] {
+  font-size: 1.8rem;
+}
+/* article section */ 
+section {
+padding-top: 30px;
+}
+
+section h2 {
+text-transform: uppercase;
+padding-left:20px;
+padding-top: 20px;
+}
+
+section ul {
+padding: 0;
+}
+
+section li {
+border:1px solid #f2f2f2;
+background-color: #fff;
+border-radius: 20px;
+margin: 15px;
+padding-left: 20px;
+box-shadow: 5px 5px 5px 5px#d7d7d7;
+}
+
+article h3 { 
+margin: 10px 0 5px 0;  
+}
+
+article p { 
+margin-top: 0px; 
+display:flex;
+justify-content: space-between;
+}
+
+article b {
+padding-right: 20px;
+}
+
+body > article > button {
+background: linear-gradient(#ff79da,#9356DC); 
+font-weight: bold;
+margin: 70px 0 40px  70px;
+padding: 20px 6px;
+ width: 60%;
+color:#f2f2f2;
+display:flex;
+justify-content: center;
+font-size: 1.2rem;
+border-radius: 25px;
+}
+
+/* footer */
+footer h3 {
+font-family: 'Shrikhand';
+}
+
+footer {
+list-style: none;
+color: #fff;
+background-color: rgba(0, 0, 0, 0.800);
+font-weight: bold;
+padding: 0 0 10px 10px;    
+}
+
+footer a {
+color: #fff;
+padding-left: 10px;
+}
+
+footer li {
+display:flex;
+align-items: flex-start;
+padding: 0 0 10px 15px;
+}
+
+body > footer > section > ul > li:nth-child(3){
+padding-left: 5px;
+}
+
+body > footer > section > ul > li:nth-child(4){
+padding-left: 0;
+}
+footer ul {
+padding-left: 0px;
+}
+
+footer h3 {
+padding: 15px 0 0 25px;
+margin-top: 0px;
+}
+
+body > footer > ul > li:nth-child(1) > a > i{
+padding-right: 10px;
+}
+
+body > footer > ul > li:nth-child(2) > a > i {
+padding-right: 5px;
+}
+
+/* apparition progressive */
+@keyframes transition {
+0%   { margin-top: -70px;opacity:0; }
+100% { margin-top: 0;opacity:1; }
+}
+
+section {
+opacity:0;animation: transition 3s ease-in-out 1s forwards;
+}
+
+section li {
+position:relative;
+}
+[class="fa-solid fa-circle-check"]{
+background-color:#99e2d0;
+color:#fff;
+padding: 13px 13px;
+font-size: 3rem;
+font-weight: bold; 
+position: absolute;
+right: 0%;
+bottom: 0%;
+border-radius: 0 15px 15px 0; 
+transition: transform .7s ease-in-out; 
+}
+
+[class="fa-solid fa-circle-check"]:hover,
+[class="fa-solid fa-circle-check"]:focus,
+[class="fa-solid fa-circle-check"]:active {
+opacity:0; animation: transition 1s ease-in-out step-end forwards; 
+transform: rotate(360deg);
+overflow: hidden;
+}
+
+
+
+
+
+
+
