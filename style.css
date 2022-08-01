@@ -287,23 +287,34 @@ body > div:nth-child(2) > footer > ul > li:nth-child(2) > a > i {
     width: 70%; 
   }
 
+  section span {
+    text-align: center;
+    padding-left: 20px;
+  }
+
+  article h2 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  article ul {
+    width:100%;
+  }
+
+  article li {
+    width: 50%;
+    margin-left:50px;
+  }
+
   article figure {
-    max-width: 50%;
+    max-width: 90%;
     height: auto;
     object-fit: contain;
   }
 
-  section ul {
+  ul {
     display: flex;
     align-content: flex-start;
-  }
-
-  article ul {
-    padding-left: 35%;
-  }
-  article h2 {
-    padding: 50px 0 0 0px;
-    text-align: center;
   }
 
   footer h3 {
@@ -317,6 +328,5 @@ body > div:nth-child(2) > footer > ul > li:nth-child(2) > a > i {
     justify-content: space-around;
     padding: 30px 0 30px 0;
   }
-
 
 }
