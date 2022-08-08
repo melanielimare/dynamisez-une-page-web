@@ -78,19 +78,19 @@ h1 {
 
 /* article section */ 
 section {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 section h2 {
   text-transform: uppercase;
-  padding-left: 20px;
+  padding: 20px;
   text-decoration-line: underline;
   text-decoration-color: #99e2d0;
   text-decoration-thickness: 0.2em;
   text-underline-offset: 1rem;
 }
 
-body > article > section:nth-child(2) > h2{
+body > article > section:nth-child(2) > h2 {
   padding-top: 20px;
   margin-top:40px;
 }
@@ -103,13 +103,9 @@ section li {
   border:1px solid #f2f2f2;
   background-color: #fff;
   border-radius: 20px;
-  margin: 30px 0px 30px 3px;
+  margin: 25px 0px 25px 3px;
   padding-left: 20px;
   box-shadow: 5px 5px 5px 5px#d7d7d7;
-}
-
-article h3 { 
-  margin: 10px 0 5px 0;  
 }
 
 article p { 
@@ -117,10 +113,15 @@ article p {
   display:flex;
   justify-content: space-between;
 }
-
+div.menu {
+  position :relative;
+}
 article span {
   font-weight: bold;
-  padding-right: 20px;
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  padding:30px 0 0 100px;
 }
 
 body > article > button {
@@ -205,83 +206,105 @@ article li {
   position: relative;
   cursor: pointer;
   opacity:0;animation: transition 2s ease-in-out 1s forwards;
-  
-}
-/* texte rogné */
- div.menu{
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 100%;
 }
 
 /* apparition progressive du check de droite à gauche */
 
-[class="fa-solid fa-circle-check"]{
+section button { 
+  background: #99e2d0;
   color:#fff;
   background-color:#99e2d0;
-  padding: 13px 13px;
-  font-size: 3rem;
+  padding: 28px 30px 28px 30px;
+  font-size: 2rem;
   font-weight: bold; 
   position: absolute;
   right:0%;
   bottom: 0%;
   border-radius: 0 15px 15px 0;  
-  opacity:0;
-  
+  border:0;
+  opacity: 0;
 }
-
+ 
 @keyframes apparition {
   0% {
-    transform: translateX(100%) scale(.7);
-    opacity: .0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    
-  }
-}
-
-[class="fa-solid fa-circle-check"]:hover,
-[class="fa-solid fa-circle-check"]:focus,
-[class="fa-solid fa-circle-check"]:active {
-  opacity: 1;
-  animation: apparition 1s ease-in-out 1s forwards; 
-  transform: rotate(360deg);
-  transition: 1s;
-  -webkit-animation: apparition 1s;
-  animation: apparition 1s;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;  
-}
-
-@keyframes apparition2 {
-  0% {
-    transform: scale(.7);
+    transform: scale(0);
     transform-origin: right;
-    padding-left: 90px;
-    
+    margin-left: -30%;
+    margin-left:-50px; 
+  }
+  
+  60% {
+    transform: scale(1);
+    transform-origin: right;
+    padding-left: 10px;
   }
 
   100% {  
-    padding-right: 30%;
+    padding-left: 20px;
     animation-fill-mode: forwards;
     animation-delay: 5s;
     opacity:1;
   }
 }
 
-article span {
-  -webkit-animation: apparition2 5s;
-  animation: apparition2 5s;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;  
+section button:hover, 
+section button:focus {
+  animation: apparition 1s;
+  transition: 2s;   
+}
+
+/* animation rotation */
+@keyframes check {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+[class="fa-solid fa-circle-check"]:hover{
+ animation: check 1s;
+ transition:1s;
+}
+
+/* prix de droite a gauche */
+@keyframes transition2 {
+  0%   { margin-right: 0px;}
+  100% {margin-right: 60px; }
+}
+
+section span:hover {
+  animation: transition2 1s;
+  transition: 1s;
+  opacity: 1;
+}
+
+/* texte rogné */
+h3,p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
+div.menu:hover,
+div.menu:focus,
+div.menu:active {
+  margin-right: 14px;
+  animation: transition2 1s;
+  transition-property: margin-right;
+  transition-duration: 4s;
+  transition-delay: 1s;
+  width:55%;
 }
 
 /* tablette */
 @media (min-width:480px) {
-
+  body > article > header > div{
+    top: 50%;
+  }
  
   section h2 {
     padding-top:40px;
@@ -291,12 +314,47 @@ article span {
 /* desktop */
 
 @media (min-width: 767px) {
-
-  body > article > header > div{
-    top: 125%;
+  body > header{
+    padding-left: 40%;
   }
-
+ 
 h1 {
-  padding-left: 30%;
+  padding-left: 40%;
 }
+
+h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+section {
+  padding-bottom: 30px;
+}
+
+footer {
+  position:relative;
+}
+
+button {
+  max-width: 20%; 
+  
+}
+
+ul footer {
+  display: flex;
+  align-content: flex-start;
+}
+
+footer h3 {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 30px;
+}
+
+footer ul {
+  display:flex;
+  justify-content: space-around;
+  padding: 30px 0 30px 0;
+}
+
 }
