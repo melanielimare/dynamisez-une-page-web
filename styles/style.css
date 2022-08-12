@@ -232,42 +232,53 @@ section button {
     transform-origin: right;
     margin-left: -30%;
     margin-left:-50px; 
+    width:0%;
+    
   }
   
   60% {
     transform: scale(1);
     transform-origin: right;
     padding-left: 10px;
+    width:20%;
   }
 
   100% {  
     padding-left: 20px;
-    animation-fill-mode: forwards;
     animation-delay: 5s;
     opacity:1;
+    width:30%;
   }
 }
 
 section button:hover, 
 section button:focus {
   animation: apparition 1s;
-  transition: 2s;   
+  transition: 2s;     
+  animation-fill-mode: forwards;
 }
 
 /* animation rotation */
+
 @keyframes check {
   0% {
     transform: rotate(0deg);
   }
+ 
+  50% {
+    transform: rotate(180deg);
+  }
+
   100% {
     transform: rotate(360deg);
   }
+} 
 
-}
-
-[class="fa-solid fa-circle-check"]:hover{
- animation: check 1s;
- transition:1s;
+[class="fa-solid fa-circle-check"]:hover {
+  animation: check 1s;
+  transform:rotate(360deg);
+  transition:ease-in-out 1s;
+  opacity:1;animation: check 1s;
 }
 
 /* prix de droite a gauche */
