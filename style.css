@@ -5,8 +5,8 @@
   font-family: 'Roboto', sans-serif;
   box-sizing:border-box;   
 }
-/* telephone */
 
+/* page d'accueil */
 form,header,section {
   text-align: center;
 }
@@ -247,6 +247,52 @@ body > div:nth-child(2) > footer > ul > li:nth-child(1) > a > i{
 
 body > div:nth-child(2) > footer > ul > li:nth-child(2) > a > i {
   padding-right: 5px;
+}
+
+/* loader */
+body > div:nth-child(1)  {
+  margin-top:0;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0%;
+  width: auto;
+  height:100%;
+}
+
+@keyframes apparition-loader{
+  0%   { opacity:1;}
+  60% { opacity:1;}
+  100%{visibility: hidden;}
+}
+body > div:nth-child(1) {
+  position:fixed;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 250px; 
+  opacity: 0;animation: apparition-loader 3s ease-in-out 1s forwards;
+}
+
+body > div:nth-child(1) > div > span {
+  font-family: 'Shrikhand';  
+  color:#000;
+}
+
+@keyframes transition2 {
+0%   { margin-left: -100%;opacity:0;}
+100% { margin-left: 0;opacity:1;}
+
+}
+
+body > div:nth-child(1) > div {
+  background: linear-gradient(#ff79da,#9356DC);
+  padding: 30px 0;
+  opacity: 0;animation: transition2 3s ease-in-out 1s forwards;
 }
 
 /* tablette */
