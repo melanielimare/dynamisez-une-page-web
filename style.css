@@ -15,12 +15,12 @@ footer section {
   text-align: left;
 }
 
-ul,
-a {
+ul,a {
   list-style: none;
   text-decoration: none;
 }
-body > div:nth-child(2) > header{
+
+body > div:nth-child(2) > header {
   background-color: #fff;
   padding: 0;
 }
@@ -31,7 +31,7 @@ form {
   font-size: 1.3rem;
   border-top: 5px solid #d6d2d2;
   background-color: #eeebeb; 
-  padding: 17px 0px;
+  padding: 17px 0;
 }
 
 form span {
@@ -42,7 +42,7 @@ form span {
 header { 
   background-color: #f2f2f2;
   padding: 30px 0;
-  margin-left:0px;
+  margin-left: 0;
   text-align: center;  
 }
 
@@ -50,14 +50,13 @@ header h1 {
   font-size: 1.6rem;
   margin: 0;
   padding: 20px 45px 20px 45px;
- 
 }
 
 header p {
   font-size: 1.2rem;
   text-align: center;
   color: #8f8e8e;
-  padding-bottom:  30px;
+  padding-bottom: 30px;
 }
 
 body > div:nth-child(2) > main > header > a {
@@ -79,9 +78,9 @@ section {
 
 section h2 {
   text-align: left;
-  padding: 30px 0 5px 20px;
-  
+  padding: 30px 0 5px 20px; 
 }
+
 .fa-1,.fa-2,
 .fa-3 {
   display: block;
@@ -90,8 +89,7 @@ section h2 {
   color:#fff;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 50%;
-  padding: 8px 10px;
-  
+  padding: 8px 10px; 
 }
 
 .fa-solid.fa-mobile-screen,.fa-solid.fa-bars {
@@ -117,10 +115,10 @@ section span {
 button {
   display: flex;
   align-items: flex-start;
-  border:1px solid #fff ;
+  border: 1px solid #fff;
   border-radius: 15px;
   margin-bottom: 30px;
-  padding:  25px 45px 25px 0px;
+  padding: 25px 45px 25px 0;
   font-weight: bold;
   box-shadow: 5px 5px 5px 5px#d7d7d7;
   width: 90%;
@@ -134,14 +132,14 @@ section li {
 #restaurants > ul > li.flex-item1 > figure,
 #restaurants > ul > li.flex-item2 > figure {
   position: relative;
- }
+}
  
 #restaurants > ul > li.flex-item1 > figure > figcaption > label,
 #restaurants > ul > li.flex-item2 > figure > figcaption > label {
   background-color: #99e2d0;
   position: absolute;
   right: 30px; top: 20px;
-  padding:10px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   font-weight: bold;
   color: #2d7261;  
 }
@@ -225,13 +223,15 @@ footer li {
   align-items: flex-start;
   padding: 0 0 10px 15px;
 }
-body > footer > section > ul > li:nth-child(3){
+
+body > footer > section > ul > li:nth-child(3) {
   padding-left: 5px;
 }
 
-body > footer > section > ul > li:nth-child(4){
+body > footer > section > ul > li:nth-child(4) {
   padding-left: 0;
 }
+
 footer ul {
   padding-left: 0px;
 }
@@ -241,7 +241,7 @@ footer h3 {
   margin-top: 0px;
 }
 
-body > div:nth-child(2) > footer > ul > li:nth-child(1) > a > i{
+body > div:nth-child(2) > footer > ul > li:nth-child(1) > a > i {
   padding-right: 10px;
 }
 
@@ -250,7 +250,7 @@ body > div:nth-child(2) > footer > ul > li:nth-child(2) > a > i {
 }
 
 /* loader */
-body > div:nth-child(1)  {
+body > div:nth-child(1) {
   margin-top:0;
   font-size: 2rem;
   color: #fff;
@@ -261,11 +261,12 @@ body > div:nth-child(1)  {
   height:100%;
 }
 
-@keyframes apparition-loader{
+@keyframes apparition-loader {
   0%   { opacity:1;}
   60% { opacity:1;}
   100%{visibility: hidden;}
 }
+
 body > div:nth-child(1) {
   position:fixed;
   z-index: 9999;
@@ -286,7 +287,6 @@ body > div:nth-child(1) > div > span {
 @keyframes transition2 {
 0%   { margin-left: -100%;opacity:0;}
 100% { margin-left: 0;opacity:1;}
-
 }
 
 body > div:nth-child(1) > div {
@@ -302,15 +302,15 @@ body > div:nth-child(1) > div {
     width: 50%;
     margin-left: 25%;
   }
-
 }
 
 /* desktop */
-
-@media (min-width: 767px) {
+@media (min-width: 767px) 
+{
   header ul {
     margin-left: 30px;
   }
+
   header img {
     width: 40%;
   }
@@ -321,13 +321,12 @@ body > div:nth-child(1) > div {
     margin-left: 35%;
   }
 
-  
   section h2 {
     margin-left: 50px;
     padding-left: 50px; 
   }
 
-  section  {
+  section {
     margin-left: 0;
   }
 
@@ -376,5 +375,4 @@ body > div:nth-child(1) > div {
     justify-content: space-around;
     padding: 30px 0 30px 0;
   }
-
 }
