@@ -6,7 +6,7 @@
   box-sizing:border-box;   
 }
 
-/* page 1 la palettte du gout */
+/* menu */
 ul,
 a {
   list-style: none;
@@ -103,38 +103,49 @@ section li {
   border:1px solid #f2f2f2;
   background-color: #fff;
   border-radius: 20px;
-  margin: 25px 0px 25px 3px;
+  margin: 25px 0 25px 3px;
   padding-left: 20px;
   box-shadow: 5px 5px 5px 5px#d7d7d7;
 }
 
 article p { 
-  margin-top: 0px; 
+  margin-top: 0; 
   display:flex;
   justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
 }
+
+article h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
 div.menu {
   position :relative;
 }
+
 article span {
   font-weight: bold;
   position: absolute;
   right: 30px;
   bottom: 40px;
-  padding:30px 0 0 100px;
+  padding-left:80%;
 }
 
 body > article > button {
+  width: auto;
+  padding: 20px 60px;
+  margin: auto;
   background: linear-gradient(#ff79da,#9356DC); 
-  font-weight: bold;
-  margin: 70px 0 40px  70px;
-  padding: 20px 6px;
-  width: 60%;
+  font-weight: bold; 
   color:#f2f2f2;
   display:flex;
   justify-content: center;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 
 /* footer */
@@ -161,23 +172,23 @@ footer li {
   padding: 0 0 10px 15px;
 }
 
-body > footer > section > ul > li:nth-child(3){
+body > footer > section > ul > li:nth-child(3) {
   padding-left: 5px;
 }
 
-body > footer > section > ul > li:nth-child(4){
+body > footer > section > ul > li:nth-child(4) {
   padding-left: 0;
 }
 footer ul {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 footer h3 {
   padding: 15px 0 0 25px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
-body > footer > ul > li:nth-child(1) > a > i{
+body > footer > ul > li:nth-child(1) > a > i {
   padding-right: 10px;
 }
 
@@ -210,9 +221,30 @@ article li {
 }
 
 /* apparition progressive du check de droite à gauche */
+@keyframes apparition {
+  0% {
+    transform: scale(0);
+    transform-origin: right;
+    margin-left:-50px; 
+    width:0%;
+    padding-left: 0px;
+  }
+  
+  60% {
+    transform: scale(1);
+    transform-origin: right;
+    padding-left: 10px;
+  }
+
+  100% {    
+    padding-left: 20px;
+    animation-delay: 5s;
+    opacity:1;
+    width:20%; 
+  }  
+}
 
 section button { 
-  background: #99e2d0;
   color:#fff;
   background-color:#99e2d0;
   padding: 28px 30px 28px 30px;
@@ -224,87 +256,36 @@ section button {
   border-radius: 0 15px 15px 0;  
   border:0;
   opacity: 0;
-}
- 
-@keyframes apparition {
-  0% {
-    transform: scale(0);
-    transform-origin: right;
-    margin-left: -30%;
-    margin-left:-50px; 
-    width:0%;
-    
-  }
-  
-  60% {
-    transform: scale(1);
-    transform-origin: right;
-    padding-left: 10px;
-    width:20%;
-  }
-
-  100% {  
-    padding-left: 20px;
-    animation-delay: 5s;
-    opacity:1;
-    width:30%;
-  }
+  padding-left: 80%;
 }
 
 section button:hover, 
-section button:focus {
+section button:focus,
+section button:active {
   animation: apparition 1s;
   transition: 2s;     
   animation-fill-mode: forwards;
+  width: 20%;
 }
 
-/* animation rotation */
-
-@keyframes check {
-  0% {
-    transform: rotate(0deg);
-  }
- 
-  50% {
-    transform: rotate(180deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-} 
-
-[class="fa-solid fa-circle-check"]:hover {
-  animation: check 1s;
+[class="fa-solid fa-circle-check"]:hover { 
   transform:rotate(360deg);
-  transition:ease-in-out 1s;
-  opacity:1;animation: check 1s;
+  transition:ease-in-out 1s;  
 }
 
 /* prix de droite a gauche */
-@keyframes transition2 {
-  0%   { margin-right: 0px;}
-  100% {margin-right: 60px; }
-}
-
 section span:hover {
-  animation: transition2 1s;
+  animation: apparition 1s;
   transition: 1s;
   opacity: 1;
+  animation-fill-mode: forwards;
+  margin-right: 10%;
 }
 
-/* texte rogné */
-h3,p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; 
-}
-
-div.menu:hover,
-div.menu:focus,
-div.menu:active {
+div.container:hover,
+div.container:focus,
+div.container:active {
   margin-right: 14px;
-  animation: transition2 1s;
   transition-property: margin-right;
   transition-duration: 4s;
   transition-delay: 1s;
@@ -312,7 +293,7 @@ div.menu:active {
 }
 
 /* tablette */
-@media (min-width:480px) {
+@media (min-width:768px) {
   body > article > header > div{
     top: 50%;
   }
@@ -324,48 +305,52 @@ div.menu:active {
 
 /* desktop */
 
-@media (min-width: 767px) {
+@media (min-width: 992px) 
+{
+  body > article > header > div {
+    position:sticky;
+  }
+
   body > header{
     padding-left: 40%;
   }
  
-h1 {
-  padding-left: 40%;
-}
+  h1 {
+    padding-left: 40%;
+  }
 
-h2 {
-  text-align: center;
-  padding-bottom: 30px;
-}
+  h2 {
+    text-align: center;
+    padding-bottom: 30px;
+  }
 
-section {
-  padding-bottom: 30px;
-}
+  section {
+    padding-bottom: 30px;
+  }
 
-footer {
-  position:relative;
-}
+  footer {
+    position:relative;
+  }
 
-button {
+  button {
   max-width: 20%; 
-  
-}
+  margin: auto;
+  }
 
-ul footer {
-  display: flex;
-  align-content: flex-start;
-}
+  ul footer {
+    display: flex;
+    align-content: flex-start;
+  }
 
-footer h3 {
-  text-align: center;
-  font-size: 2rem;
-  padding-top: 30px;
-}
+  footer h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 30px;
+  }
 
-footer ul {
-  display:flex;
-  justify-content: space-around;
-  padding: 30px 0 30px 0;
-}
-
+  footer ul {
+    display:flex;
+    justify-content: space-around;
+    padding: 30px 0 30px 0;
+  }
 }
