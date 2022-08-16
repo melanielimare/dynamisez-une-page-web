@@ -5,10 +5,102 @@
   font-family: 'Roboto', sans-serif;
   box-sizing:border-box;   
 }
+/* remplissage progressive du coeur */
+[class="fa-regular fa-heart"]:hover,
+[class="fa-regular fa-heart"]:focus,
+[class="fa-regular fa-heart"]:active {
+  font-weight: bold;
+  color: #9356DC;
+  transition: color 2s ease-out; 
+}
+
+/* apparition progressive des menus de haut en bas */
+@keyframes transition {
+  0%   { margin-top: -70px;opacity:0; }
+  100% { margin-top: 0;opacity:1; }
+}
+
+article li {
+  position: relative;
+  cursor: pointer;
+  opacity:0;animation: transition 2s ease-in-out 1s forwards;
+  width: 100%;
+}
+
+/* apparition progressive du check de droite à gauche */
+@keyframes apparition {
+  0% {
+    transform: scale(0);
+    transform-origin: right;
+    margin-left:-50px; 
+    width:0%;
+    padding-left: 0px;
+  }
+  
+  60% {
+    transform: scale(1);
+    transform-origin: right;
+    padding-left: 10px;
+  }
+
+  100% {    
+    padding-left: 20px;
+    animation-delay: 5s;
+    opacity:1;
+    width:20%; 
+  }  
+}
+
+section button { 
+  color:#fff;
+  background-color:#99e2d0;
+  padding: 28px 30px 28px 30px;
+  font-size: 2rem;
+  font-weight: bold; 
+  position: absolute;
+  right:0%;
+  bottom: 0%;
+  border-radius: 0 15px 15px 0;  
+  border:0;
+  opacity: 0;
+  padding-left: 100%;
+}
+
+section button:hover, 
+section button:focus,
+section button:active {
+  animation: apparition 1s;
+  transition: 2s;     
+  animation-fill-mode: forwards;
+  width: 20%;
+}
+
+[class="fa-solid fa-circle-check"]:hover { 
+  transform:rotate(360deg);
+  transition:ease-in-out 1s;  
+}
+
+/* prix de droite a gauche */
+section span:hover {
+  animation: apparition 1s;
+  transition: 1s;
+  opacity: 1;
+  animation-fill-mode: forwards;
+  margin-right: 10%;
+}
+
+div.card:hover,
+div.card:focus,
+div.card:active {
+  margin-right: 14px;
+  transition-property: margin-right;
+  transition-duration: 4s;
+  transition-delay: 1s;
+  width:55%;
+}
 
 /* menu */
-ul,
-a {
+ul,a {
   list-style: none;
   text-decoration: none;
 }
@@ -37,7 +129,7 @@ body > header > ul > li > a > i {
 }
 
 /* article header */ 
-article  {
+article {
   background-color: #f2f2f2;
   margin-bottom: 0;
   padding-bottom: 40px;
@@ -108,16 +200,8 @@ section li {
   box-shadow: 5px 5px 5px 5px#d7d7d7;
 }
 
-article p { 
+article h3,p {
   margin-top: 0; 
-  display:flex;
-  justify-content: space-between;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; 
-}
-
-article h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; 
@@ -125,6 +209,7 @@ article h3 {
 
 div.menu {
   position :relative;
+  padding-top: 20px;
 }
 
 article span {
@@ -132,7 +217,7 @@ article span {
   position: absolute;
   right: 30px;
   bottom: 40px;
-  padding-left:80%;
+  padding-left: 100%;
 }
 
 body > article > button {
@@ -179,6 +264,7 @@ body > footer > section > ul > li:nth-child(3) {
 body > footer > section > ul > li:nth-child(4) {
   padding-left: 0;
 }
+
 footer ul {
   padding-left: 0;
 }
@@ -196,104 +282,9 @@ body > footer > ul > li:nth-child(2) > a > i {
   padding-right: 5px;
 }
 
-/* animation */
-
-/* remplissage progressive du coeur */
-[class="fa-regular fa-heart"]:hover,
-[class="fa-regular fa-heart"]:focus,
-[class="fa-regular fa-heart"]:active {
-  font-weight: bold;
-  color: #9356DC;
-  transition: color 2s ease-out; 
-}
-
-/* apparition progressive des menus de haut en bas */
-@keyframes transition {
-  0%   { margin-top: -70px;opacity:0; }
-  100% { margin-top: 0;opacity:1; }
-}
-
-article li {
-  position: relative;
-  cursor: pointer;
-  opacity:0;animation: transition 2s ease-in-out 1s forwards;
-  width: 100%;
-}
-
-/* apparition progressive du check de droite à gauche */
-@keyframes apparition {
-  0% {
-    transform: scale(0);
-    transform-origin: right;
-    margin-left:-50px; 
-    width:0%;
-    padding-left: 0px;
-  }
-  
-  60% {
-    transform: scale(1);
-    transform-origin: right;
-    padding-left: 10px;
-  }
-
-  100% {    
-    padding-left: 20px;
-    animation-delay: 5s;
-    opacity:1;
-    width:20%; 
-  }  
-}
-
-section button { 
-  color:#fff;
-  background-color:#99e2d0;
-  padding: 28px 30px 28px 30px;
-  font-size: 2rem;
-  font-weight: bold; 
-  position: absolute;
-  right:0%;
-  bottom: 0%;
-  border-radius: 0 15px 15px 0;  
-  border:0;
-  opacity: 0;
-  padding-left: 80%;
-}
-
-section button:hover, 
-section button:focus,
-section button:active {
-  animation: apparition 1s;
-  transition: 2s;     
-  animation-fill-mode: forwards;
-  width: 20%;
-}
-
-[class="fa-solid fa-circle-check"]:hover { 
-  transform:rotate(360deg);
-  transition:ease-in-out 1s;  
-}
-
-/* prix de droite a gauche */
-section span:hover {
-  animation: apparition 1s;
-  transition: 1s;
-  opacity: 1;
-  animation-fill-mode: forwards;
-  margin-right: 10%;
-}
-
-div.container:hover,
-div.container:focus,
-div.container:active {
-  margin-right: 14px;
-  transition-property: margin-right;
-  transition-duration: 4s;
-  transition-delay: 1s;
-  width:55%;
-}
-
 /* tablette */
-@media (min-width:768px) {
+@media (min-width:768px) 
+{
   body > article > header > div{
     top: 50%;
   }
@@ -304,7 +295,6 @@ div.container:active {
 }
 
 /* desktop */
-
 @media (min-width: 992px) 
 {
   body > article > header > div {
@@ -326,6 +316,15 @@ div.container:active {
 
   section {
     padding-bottom: 30px;
+  }
+
+  article li {
+    width: 50%;
+  }
+
+  article ul {
+    display: flex;
+    align-items: center;
   }
 
   footer {

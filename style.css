@@ -296,8 +296,8 @@ body > div:nth-child(1) > div {
 }
 
 /* tablette */
-@media (min-width:480px) {
-
+@media (min-width:768px)
+{
   body > div:nth-child(2) > main > header > a {
     width: 50%;
     margin-left: 25%;
@@ -305,7 +305,7 @@ body > div:nth-child(1) > div {
 }
 
 /* desktop */
-@media (min-width: 767px) 
+@media (min-width: 992px) 
 {
   header ul {
     margin-left: 30px;
