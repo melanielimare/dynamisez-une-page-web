@@ -25,13 +25,19 @@ body > div:nth-child(2) > header {
   padding: 0;
 }
 
+.recherche {
+  border: none;
+  background:transparent;
+  width: 50%;
+
+}
 /* form */
 form {
   font-weight: bold;
   font-size: 1.3rem;
   border-top: 5px solid #d6d2d2;
   background-color: #eeebeb; 
-  padding: 17px 0;
+  width: 100%;
 }
 
 form span {
@@ -62,13 +68,18 @@ header p {
 body > div:nth-child(2) > main > header > a {
   border-radius: 50px;
   color: white;
-  margin: 40px;
+   margin: 40px;
   padding: 25px;
   background: linear-gradient(#ff79da,#9356DC);
   display:flex;
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  box-shadow: 0 5px 5px 5px grey;
+}
+
+body > div:nth-child(2) > main > header > a:hover {
+  opacity: 0.7;
 }
 
 /* section */
@@ -81,6 +92,12 @@ section h2 {
   padding: 30px 0 5px 20px; 
 }
 
+.fa-store {
+  color:#9356DC;
+  padding: 5px 0px 0 40px;
+  position: relative;
+}
+
 .fa-1,.fa-2,
 .fa-3 {
   display: block;
@@ -90,22 +107,19 @@ section h2 {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 50%;
   padding: 8px 10px; 
+  left:10px;
+  position: absolute;
 }
 
 .fa-solid.fa-mobile-screen,.fa-solid.fa-bars {
   color:#8f8e8e;
-  padding: 5px 0px 0 20px;
-}
-
-button
-.fa-store {
-  color:#9356DC;
-  padding: 5px 0px 0 20px;
+  padding: 5px 0px 0 40px;
 }
 
 .fa-1,.fa-2,.fa-3,
-.fa-mobile-screen,.fa-bars,.fa-store {
-  margin-right: 10px;
+.fa-mobile-screen,.fa-bars,.fa-store
+ {
+  margin-right: 20px;
 }
 
 section span {
@@ -192,7 +206,8 @@ main figcaption h3,p {
   color: #9356DC;
   font-size: 1.8rem; 
   padding: 10px 30px 0 0;  
-  transition: color 2s ease-out;
+  transition: color 0.5s ease-out;
+  opacity: 0.7;
 }
 
 [class="fa-regular fa-heart"] {
@@ -299,8 +314,16 @@ body > div:nth-child(1) > div {
 @media (min-width:768px)
 {
   body > div:nth-child(2) > main > header > a {
-    width: 50%;
+    width:30%;
     margin-left: 25%;
+   }
+
+   .recherche {
+  width: 15%;
+  }  
+
+  section li:hover {
+    transform: scale(1.2);
   }
 }
 
@@ -312,7 +335,7 @@ body > div:nth-child(1) > div {
   }
 
   header img {
-    width: 40%;
+    width: 20%;
   }
 
   body > div:nth-child(2) > main > header > a {
@@ -343,6 +366,11 @@ body > div:nth-child(1) > div {
     text-align: center;
     margin-bottom: 60px;
   }
+  
+.fa-1,.fa-2,
+.fa-3 {
+  position: sticky;
+}
 
   article ul {
     width:100%;
