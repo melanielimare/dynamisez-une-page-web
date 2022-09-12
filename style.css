@@ -291,7 +291,7 @@ body > div:nth-child(1) {
   width: 100%;
   background-color: #fff;
   padding-top: 250px; 
-  opacity: 0;animation: apparition-loader 3s ease-in-out 1s forwards;
+  opacity: 0.7;animation: apparition-loader 3s ease-in-out 1s forwards;
 }
 
 body > div:nth-child(1) > div > span {

@@ -109,7 +109,7 @@ ul,a {
 
 #logo {
   border: 0;
-  margin-left: 60px;
+  margin-left: 0;
   width: 60%; 
 }
 
@@ -133,7 +133,7 @@ article figure {
   margin:0;
   width: 100%;   
 }
-
+/* etiquette nouveau */
 figure img {
   width: 100%;
   height: auto;
